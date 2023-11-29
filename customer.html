@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="custm.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap js -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <title>Customers</title>
+  </head>
+  <body>
+      <section class="container-fluid">
+    <h3 class="text-center pt-5 pb-3">Customers Details</h3>
+
+    <strong>Total Customers List</strong>
+    <button
+      type="button"
+      class="btn btn-primary m-3 rounded-lg"
+      data-toggle="modal"
+      data-target="#popUpModel"
+    >
+      Add Customers
+    </button>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="popUpModel"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Customer Information</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <!-- Form data -->
+            <form
+              onsubmit="event.preventDefault();onFormSubmit();"
+              autocomplete="off"
+            >
+              <div class="form-group">
+                <label>Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  id="name"
+                  placeholder="Enter name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  placeholder="Enter email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>phone</label>
+                <input
+                  type="phone"
+                  class="form-control"
+                  id="phone"
+                  name="phone"
+                  placeholder="Enter phone"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>AC Supply</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="position"
+                  name="position"
+                  placeholder="yes/no"
+                  required
+                />
+              </div> 
+              <div class="form-group">
+                <label>Electrity,Gas,Steam</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="salary"
+                  id="salary"
+                  placeholder="any"
+                  required
+                />
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+                <div class="form-action-buttons">
+                  <input class="btn btn-primary" onclick="hideInfo" type="submit" value="Submit" />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <!-- Table Data -->
+    <table id="employeeList" class="table table-striped">
+      <thead>
+        <tr class="table-success">
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col">AC Supply</th>
+          <th scope="col">Electrity,Gas,Steam</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+       
+      </tbody>
+    </table>
+    <div id="information" class="text-center p-3">
+    <h3>Currently no information available</h3>
+    <h4>Please, Click Add User button for add user information</h4>
+  </div>
+</section>
+    <script src="custme.js"></script>
+  </body>
+</html>
